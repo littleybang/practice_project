@@ -1,0 +1,703 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>project-M091318 main </title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico|Nunito:600,900" rel="stylesheet">
+        
+        <!-- <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+  crossorigin="anonymous"> -->
+        <style>
+            /* 
+            銀紅 #EF767A
+            藏青 #456990
+            松柏綠 #49BEAA
+            青碧 #49DCB1
+            杏黃 #EEB868
+            灰 #333
+             */
+            body{
+                height: 100vh;
+                
+            }
+
+            /* ========HEADER navbar========= */
+            h1.top_brand{
+                padding: 20px;
+                display: block;
+                text-align: center;
+                font-family: 'Pacifico', cursive;
+                color: rgb(80, 80, 80);
+            }
+            header{
+                display: flex;
+                justify-content: center;
+                transition: .5s;
+            }
+            nav{
+                background: #fff;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 99;
+            }
+            .hide_nav{
+                transform: translateY(-100px);
+            }
+            ul{
+                max-width: 760px;
+                /* text-align: center; */
+                margin: auto;
+            }
+            li {
+                list-style-type: none;
+                
+            }
+            li a{
+                color: #456990;
+                font-size: 1rem;
+                /* font-family: Nunito; */
+            }
+            li a:hover {
+                text-decoration: none;
+                color: #49BEAA;
+                padding-bottom: 0px;
+                border-bottom: 2px solid #49BEAA;
+            }
+            
+            /* =======HERO page ======= */
+            .main_hero{
+                margin-top: 150px;
+            }
+            .main_title{
+                position: absolute;
+                /* top: 330px; */
+                top: 62%;
+                /* left: 150px; */
+                left: 50%;
+                transform: translate(-50%, 0)
+            }
+            /* .main_title .title_box{
+                height: 2.5rem;
+                width: 250px;
+            } */
+            @keyframes title_animation{
+                0%{width: 0}
+                50%{width: 100%}
+                100%{width: 0%}
+            }
+            .main_title .title{
+                font-size: 2rem;
+                color: white;
+                text-align: center;
+            }
+            .title_box1 {
+                position: absolute;
+                bottom: 79px;
+                background: #EF767A;
+                width: 470px;
+                height: 30px;
+                animation: title_animation 1s forwards ; 
+            }
+            .main_title .subtitle{
+                font-size: 1.5rem;
+                color: white;
+                text-align: center;
+            }
+            .title_box2{
+                position: absolute;
+                bottom: 20px;
+                background: #456990;
+                width: 300px;
+                height: 30px;
+                animation: title_animation 1s forwards ; 
+            }
+            .background_wrapper{
+                /* max-width: 920px; */
+                /* background: url(/images/salad_on_table_BG.png) no-repeat left top; */
+                /* overflow: hidden; */
+                position: relative;
+            }
+            .main_background{
+                position: relative;
+                /* 要把圖片改成background image再試試看 */
+                /* background-attachment: fixed; */
+                overflow: hidden;
+                /* max-width: 920px; */
+                /* width: 100%; */
+                height: 500px;
+                /* max-width: 960px; */
+                background: url(images/salad_on_table_BG.png) no-repeat top center;
+                background-size: cover;
+                /* background-attachment: fixed; */
+            }
+            .main_background .logo{
+                max-width: 8%;
+                min-width: 100px;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translate(-50%, -50%);
+            }
+            .main_background .dishes{
+                position: absolute;
+                opacity: 0;
+                transition: .5s;
+                /* 不是background所以不能用 */
+                /* background-attachment: fixed; */
+            }
+            .main_background .bg_bread{
+                right: 0;
+                bottom: 0;
+                width: 30%;
+                transform: translateY(100px);
+            }
+            .main_background .bg_salad{
+                left: 0;
+                bottom: 0;
+                width: 45%;
+                transform: translateY(100px);
+                /* transition: 1.5s; */
+            }
+            .main_background .bg_egg{
+                left: 0;
+                top: 0;
+                width: 30%;
+                transform: translateX(-100px);
+            }
+            .main_background .bg_veg{
+                right: 0;
+                top: 0;
+                width: 30%;
+                transform: translateY(-100px);
+            }
+            
+             /* 要改成animation? */
+            .main_background:hover img.bg_bread,
+            .main_background:hover img.bg_salad,
+            .main_background:hover img.bg_egg,
+            .main_background:hover img.bg_veg{
+                transform: translateY(0);
+                opacity: 1;
+            }
+            @media screen and (min-width: 1201px){
+                .main_background .bg_bread{
+                    width: 20%;
+                }
+                .main_background .bg_salad{
+                    width: 32%;
+                }
+                .main_background .bg_egg{
+                    width: 20%; 
+                }
+                .main_background:hover img.bg_bread{
+                    opacity: 0;
+                    
+                }
+                .main_background .bg_veg{
+                    width: 25%;
+                 
+                }
+            }
+            @media screen and (min-width: 992px) and (max-width: 1200px){
+                .main_background .bg_bread{
+                    width: 27%;
+                }
+                .main_background:hover img.bg_bread{
+                    transform: translateY(60px);
+                    opacity: 1;
+                }
+                .main_background .bg_salad{
+                    width: 35%;
+                }
+                .main_background .bg_egg{
+                    width: 25%;
+                   
+                }
+                .main_background .bg_veg{
+                    width: 25%;
+                 
+                }
+            }
+            @media screen and (max-width: 768px){
+                .main_background .bg_bread{
+                    width: 40%;
+                }
+                .main_background .bg_salad{
+                    width: 55%;
+                }
+                .main_background .bg_egg{
+                    width: 25%; 
+                }
+                .main_background:hover img.bg_egg{
+                    transform: translateY(50px);
+                    
+                }
+                .main_background .bg_veg{
+                    width: 25%;
+                 
+                }
+            }
+            
+
+            /* ======= about text ======= */
+            .about_bg{
+                margin-top: 40px;
+                width: 100%;
+                height: 300px;
+                background: url(images/main_bg_pink_final.jpg) center;
+                background-size: contain;
+                /* background-attachment: fixed; */
+            }
+            .about_wrapper{
+                padding: 20px;
+                text-align: center;
+                height: 200px;
+                width: 80%;
+                color: rgb(80, 80, 80);
+                background: rgba(255, 255, 255, 0.9);
+                border-radius: 10px;
+
+            }
+            h3.about_title{
+                display: inline-block;
+                width: 200px;
+                font-size: 3.5rem;
+                margin-right: 30px;
+            }
+            p.about_text{
+                display: inline-block;
+                width: 400px;
+                text-align: justify;
+            }
+            @media screen and (max-width: 858px){
+                h3.about_title{
+                    font-size: 2.2rem;
+                }
+                .about_wrapper{
+                    height: auto;
+                }
+                p.about_text{
+                    width: auto;
+                }
+
+            }
+
+            /* =======STEPS======= */
+            .main_steps{
+                margin-top: 50px;
+                text-align: center;
+                /* border: 1px solid red; */
+            }
+            .steps_wrapper{
+                display: flex;
+                justify-content: space-between;
+                /* border: 1px solid black; */
+                align-items: center;
+                height: 350px;
+            }
+            .step_card{
+                width: 30%;
+                height: 300px;
+                /* margin: auto; */
+                text-align: center;
+                /* border: 1px solid #ccc; */
+                /* border-radius: 10px; */
+                /* box-shadow: 5px 5px 10px #ddd ; */
+                padding: 10px;
+                /* opacity: 0; */
+                /* transform: translateX(-20px); */
+                transition: .5s;
+                
+            }
+            .step_card p{
+                padding-top: 5px;
+                opacity: 0;
+                transform: translateX(-20px);
+                transition: .5s;
+            }
+            .step_card h3{
+                line-height: 1.4rem;
+                margin: 10px;
+                color: #ff5056;
+            }
+            .step_card img{
+                padding-top: 30px;
+                width: 30%; 
+                opacity: 0;
+                transform: translateX(-20px);
+                transition: .5s;
+            }
+            .step3 img{
+                padding-top: 20px;
+                width:50%;
+            }
+            .step_card .is-showing{
+                opacity: 1;
+                transform: translateX(0px)
+            }
+            @media screen and (max-width: 767px){
+                .steps_wrapper{
+                    display: block;
+                    height: auto;
+                }
+                .step_card{
+                    width: 270px;
+                    height: auto;
+                    margin: auto;
+                }
+                .step_card h3{
+                    display: inline-block;
+                }
+                /* .step_card p{
+                    width: 200px;
+                    text-align: center;
+                } */
+                .step_card img{
+                    width: 70px;
+                    padding-top: 0px;
+                }
+                .step3 img{
+                    width: 90px;
+                }
+
+            }
+
+            /* ======= join us ======= */
+            .joinUs{
+                height: 200px;
+                background: url(images/main_bg_fish_final.jpg) center;
+                background-size: contain;
+                /* background-attachment: fixed; */
+            }
+            .joinUs_wrapper{
+                width: 70%;
+                height: 60%;
+                background: rgba(255, 255, 255, 0.9);
+                position: relative;
+                margin-right: 0;
+            }
+            .join{
+                border: 2px solid #000000;
+                display: inline-block;
+                padding: 5px;
+                border-radius: 5px;
+            }
+            .joinUs_title{
+                color: #ff5056;
+                margin: 0 20px;
+            }
+            .btn_app{
+                border: 1px solid rgb(35, 92, 82);
+                width: 200px;
+                text-align: center;
+                margin: 10px 20px;
+            }
+            .btn_app a{
+                color: #49BEAA;
+                padding: 5px 40px;
+            }
+            .btn_app a:hover{
+                color: rgb(37, 117, 104);
+                text-decoration: none;
+            }
+            .btn_supplier{
+                border: 1px solid #456990;
+                width: 200px;
+                text-align: center;
+                margin: 10px 20px;
+            }
+            .btn_supplier a{
+                color: #456990;
+                padding: 5px 35px;
+            }
+            .btn_supplier a:hover{
+                color: #669dd8;
+                text-decoration: none;
+            }
+            @media screen and (max-width: 579px){
+                .joinUs_wrapper{
+                    width: 100%;
+                }
+                .joinUs_title{
+                    font-size: 1.3rem;
+                }
+                .btn_app{
+                    width: 100px;
+                    margin: 5px 0;
+                }
+                .btn_app a{
+                    padding: 0px;
+                    font-size: .8rem;
+                }
+                .btn_supplier{
+                    width: auto;
+                    margin: 0;
+                }
+                .btn_supplier a{
+                    padding: 0;
+                    font-size: .8rem;
+                }
+            }
+            /* FAQ */
+            .faq{
+                text-align: center;
+                font-size: 2.2rem;
+                padding: 10px;
+                color: #363636;
+                /* overflow: hidden; */
+                transition: .5s;
+            }
+            .accordion_wrapper{
+                width: 1000px;
+                height: 500px;
+                /* border: 1px solid #414141; */
+                transition: .5s;
+            }
+            .accordion{
+                width: 80%;
+                /* border: 2px solid #49beaac0; */
+                background: #53b6a5;
+                border-radius: 5px;
+                margin: auto;
+                transition: .5s;
+            }
+            a.topic{
+                transition: .5s;
+            }
+            .topic{
+                /* border: 1px solid #456990; */
+                width: 100%;
+                height: 60px;
+                font-weight: 500;
+                cursor: pointer;
+                color: #fff !important;
+                font-size: 1.1rem;
+                transition: .5s;
+                padding: 20px;
+                line-height: 40px;
+                
+            }
+            .content{
+                height: 0;
+                overflow: hidden;
+                transition: .5s;
+                background: #ffffff;
+                border-top: 2px solid #ffffff;
+            }
+            .content p{
+                padding: 10px;
+            }
+            .content.active{
+                height: 100%;
+            }
+            
+
+            /* ======= FOOTER ======= */
+            footer{
+                width: 100%;
+                height: 150px;
+                background: #49BEAA;
+            }
+            footer .copy_right{
+                text-align: center;
+                padding-top: 70px;
+                color: white;
+                font-size: 0.9rem;
+                font-weight: 100;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <div class="">
+                        <h1 class="top_brand">Too good to go</h1>
+                    </div>
+                    <ul class="nav d-flex justify-content-around">
+                        <li class="nav-item"><a href="main.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <!-- <li class="nav-item"><a href="" class="nav-link">Save food</a></li> -->
+                        <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
+                        <li class="nav-item"><a href="app.html" class="nav-link">App</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+            <main class="main_hero">
+                <div class="background_wrapper container">
+                    <div class="main_background">
+                        <img class="logo" src="images/tgto_logo_300dpi.png" alt="">
+                        <!-- <img src="images/salad_on_table_BG.png" alt=""> -->
+                        <img class="dishes bg_bread" src="images/salad_on_table_bread.png" alt="">
+                        <img class="dishes bg_salad" src="images/salad_on_table_salad.png" alt="">
+                        <img class="dishes bg_egg" src="images/salad_on_table_egg.png" alt="">
+                        <img class="dishes bg_veg" src="images/salad_on_table_veg.png" alt="">
+                    </div>
+                    <span class="main_title">
+                        <div class="">
+                            <p class="title">Join our food waste revolution!</p>
+                            <div class="title_box title_box1"></div>
+                        </div>
+                        <div class="">
+                            <p class="subtitle">Rescue food at great price</p>
+                            <div class="title_box title_box2"></div>
+                        </div>
+                    </span>
+                </div>
+            </main>
+
+            <!-- ====== about ====== -->
+            <main class="about_bg d-flex align-items-center">
+                <div class="container about_wrapper">
+                    <h3 class="about_title">Who are we?</h3>
+                    <!-- <img src="images/line.png" alt=""> -->
+                    <p class="about_text">
+                        Too Good To Go is one of Europe’s most promising startups.
+                            We’ve made a massive
+                            impact in reducing food waste and our story
+                            has been well covered by international,
+                            national and local medias. We’re currently
+                            active in 8 European countries with more on
+                            the way!
+                    </p>
+                </div>    
+            </main>
+
+            <!-- ====== steps ====== -->
+            <main class="main_steps">
+                <h3 class="">3 Steps to Rescue Food</h3>
+                <div class="container steps_wrapper">
+                    <div class="step_card">
+                        <img src="images/map-with-placeholder.svg" alt="">
+                        <h3>Search</h3>
+                        <p>Find the food you fancy and order your meal through the app.</p>
+                    </div>
+                    <div class="step_card">
+                        <img src="images/bicycle.svg" alt="">
+                        <h3>Collect</h3>
+                        <p>Collect the food at the assigned period instore.</p>
+                    </div>
+                    <div class="step_card step3">
+                        <img src="images/steps03_final.svg" alt="">
+                        <h3>Enjoy!</h3>
+                        <p>Rescue food that would have been wasted.</p>
+                    </div>
+                </div>
+            </main>
+
+            <!-- FAQ -->
+            <div class="accordion_wrapper container">
+                <h2 class="faq">FAQ</h2>
+                <div class="accordion">
+                    <a class="p-2 topic">Q. What's Too Good To Go about?</a>
+                    <div class="content">
+                        <p class="p-2">
+                            Too Good To Go is the free app letting you save food that's - you guessed it - too good to go! Instead of stores throwing away their unsold food, you can be a waste warrior & rescue it. The best part? You’re also helping the environment!
+                        </p>
+                    </div>
+                    <a class="p-2 topic">Q. I have food waste. Sign me up!</a>
+                    <div class="content">
+                        <p class="p-2">
+                            We're super excited that you want to get involved! Drop us an email to info@toogoodtogo.co.uk and we'll get you rescuing meals ASAP.
+                        </p>
+                    </div>
+                    <a class="p-2 topic">Q. How do I rescue a meal?</a>
+                    <div class="content">
+                        <p class="p-2">
+                            It's super simple...
+                            - Download Too Good To Go
+                            - Create your account and log in
+                            - Select a store and pay through the app
+                            - Rescue your food during the collection period
+                            - Show your mobile receipt then grab and go!
+                        </p>
+                    </div>
+                    <a class="p-2 topic">Q. Hold up - why would I eat food waste?</a>
+                    <div class="content">
+                        <p class="p-2">
+                            Don't worry, food on Too Good To Go is still fresh! You're collecting unsold food that would have been thrown away had you not rescued it.
+                        </p>
+                    </div>
+                </div>
+        
+            </div>
+
+            <!-- food warrior -->
+            <main class="joinUs d-flex justify-content-end align-items-center">
+                <div class="joinUs_wrapper d-flex align-items-center">
+                    <h2 class="joinUs_title">Become a Food Warrior!</h2>
+                    <div class="btn_wrap">
+                        <div class="join btn_app"><a href="app.html">Download App</a></div>
+                        <div class="join btn_supplier"><a href="business.html">Join as supplier</a></div>
+                    </div>
+                </div>
+            </main>
+
+            <!-- footer -->
+            <footer>
+                <p class="copy_right">© 2018 Too Good To Go Ltd. All rights reserved</p>
+
+            </footer>
+            <script
+            src="https://code.jquery.com/jquery-3.3.1.min.js"
+            integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+            crossorigin="anonymous"></script>
+            <script>
+            
+            // $("body").scrollTop(function(){
+            //     $(".step_card").css("transform", "translate()")
+            // })
+            $(window).scroll(function(){
+                var wScroll = $(this).scrollTop();
+                
+                // if(wScroll > $(".about_text").offset().top -300){
+                //     $(".about_text").addClass("is-showing");
+                // }
+                if(wScroll > $(".main_steps").offset().top -450){
+                // console.log("hi");
+                    $(".step_card ").each(function(i){
+                        setTimeout(function(){
+                            $(".step_card img").eq(i).addClass("is-showing");
+                        }, 150 * (i+1));
+                    });
+                }
+                if(wScroll > $(".step_card").offset().top -400){
+                    $(".step_card").each(function(i){
+                        setTimeout(function(){
+                            $(".step_card p").eq(i).addClass("is-showing");
+                        }, 150 * (i+1));
+                    });
+                }
+            });
+
+            var scrollLast=0;
+            $(window).scroll(function(){
+                let scrollNow=$(this).scrollTop();
+
+                if(scrollNow>scrollLast){
+                    $("header").addClass("hide_nav")
+                }else{
+                    $("header").removeClass("hide_nav")
+                }
+                scrollLast=scrollNow;
+            });
+
+            $(".topic").click(function(){
+                $(this).next().addClass("active").siblings().removeClass("active");
+
+                $(".accordion a, .content").removeClass("active");
+                $(this).removeClass("active").next().addClass("active");
+
+            })
+        
+        </script>
+    </body>
+</html>

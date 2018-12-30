@@ -1,0 +1,248 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>app</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico|Nunito:600,900" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico|Nunito:600,900" rel="stylesheet">
+        <link href="camroll_slider.css" rel="stylesheet">
+
+
+        <style>
+            /* 
+            銀紅 #EF767A
+            藏青 #456990
+            松柏綠 #49BEAA
+            青碧 #49DCB1
+            杏黃 #EEB868
+            灰 #333
+             */
+            body{
+                height: 100vh;
+            }
+
+            /* ========HEADER navbar========= */
+            h1.top_brand{
+                padding: 20px;
+                display: block;
+                text-align: center;
+                font-family: 'Pacifico', cursive;
+                color: rgb(80, 80, 80);
+            }
+            header{
+                display: flex;
+                justify-content: center;
+                transition: .5s;
+            }
+            nav{
+                background: #fff;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 99;
+            }
+            .hide_nav{
+                transform: translateY(-100px);
+            }
+            ul{
+                max-width: 760px;
+                /* text-align: center; */
+                margin: auto;
+            }
+            li {
+                list-style-type: none;
+                
+            }
+            li a{
+                color: #456990;
+                font-size: 1rem;
+                /* font-family: Nunito; */
+            }
+            li a:hover {
+                text-decoration: none;
+                color: #49BEAA;
+                padding-bottom: 0px;
+                border-bottom: 2px solid #49BEAA;
+            }
+            
+            /* ======= phone ======= */
+            .phone{
+                /* border: 1px solid #456990; */
+                /* margin-top: 160px; */
+                /* margin-left: 500px; */
+                position: absolute;
+                /* z-index: 9; */
+                width: 200px;
+                left: 77%;
+                top: 70%;
+            }
+            .phone img{
+                width: 100%;
+                height: 100%;
+                display: block;
+                padding: 10px;
+            }
+            .phone img:hover{
+                cursor: pointer;
+                transform: scale(1.05);
+            }
+
+            #example {
+                width: 554px;
+                height: 744px;
+                color: white;
+            }
+
+            /* info */
+            .info_wrapper{
+                position: absolute;
+                width: 250px;
+                left: 5%;
+                top: 40%;
+                font-size: 2rem;
+                /* font-family: 'Nunito'; */
+                font-weight: 700;
+            }
+            .info_text{
+                position: absolute;
+                /* opacity: 0; */
+                transform: translateX(-150px);
+            }
+            .info_wrapper .is-showing{
+                opacity: 1;
+                transform: translateX(0px);
+            }
+
+            @media screen and (max-width: 1015px) {
+                .phone{
+                    position: static;
+                    width: 100%;
+                    /* left: 77%;
+                    top: 70%; */
+                    display: flex;
+                    justify-content: center;
+                }
+                .phone img{
+                    width: 200px;
+                    display: inline-block;
+                    padding: 20px;
+                }
+                
+            }
+
+            /* ======= FOOTER ======= */
+            footer{
+                width: 100%;
+                height: 150px;
+                background: #49BEAA;
+            }
+            footer .copy_right{
+                text-align: center;
+                padding-top: 70px;
+                color: white;
+                font-size: 0.9rem;
+                font-weight: 100;
+            }
+
+        </style>
+    </head>
+    <body>
+        <!-- ====== Header ====== -->
+        <div class="container">
+            <header>
+                <nav>
+                    <div class="">
+                        <h1 class="top_brand">Too good to go</h1>
+                    </div>
+
+                    <ul class="nav d-flex justify-content-around">
+                        <li class="nav-item"><a href="main.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <!-- <li class="nav-item"><a href="" class="nav-link">Save food</a></li> -->
+                        <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
+                        <li class="nav-item"><a href="app.html" class="nav-link">App</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+
+        <!-- ====== PLUGIN of slider ======= -->
+        <div id="example" class="crs-wrap container d-flex">
+            <div class="crs-screen">
+                <div class="crs-screen-roll">
+                    <div class="crs-screen-item" style="background-image: url('images/iphone_app1_final.png'); background-repeat: no-repeat">
+                    </div>
+                    <div class="crs-screen-item" style="background-image: url('images/iphone_app2_final.png'); background-repeat: no-repeat">
+                    </div>
+                    <div class="crs-screen-item" style="background-image: url('images/iphone_app3_final.png'); background-repeat: no-repeat">
+                    </div>
+                    <div class="crs-screen-item" style="background-image: url('images/iphone_app4_final.png'); background-repeat: no-repeat">
+                    </div>
+                </div>
+            </div>
+            <div class="crs-bar">
+                <div class="crs-bar-roll-current"></div>
+                <div class="crs-bar-roll-wrap">
+                    <div class="crs-bar-roll">
+                        <div class="crs-bar-roll-item"></div>
+                        <div class="crs-bar-roll-item"></div>
+                        <div class="crs-bar-roll-item"></div>
+                        <div class="crs-bar-roll-item"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="phone ">
+            <!-- <img src="images/iphone_blank.png" alt=""> -->
+            <a href="https://itunes.apple.com/dk/app/too-good-to-go/id1060683933?mt=8"><img src="images/apple-store.svg" alt=""></a>
+            <a href="https://play.google.com/store/apps/details?id=com.app.tgtg&hl=zh_TW"><img src="images/google-store.png" alt=""></a> 
+        </div>
+
+        <!-- <div class="info_wrapper">
+            <div class="info_text">Search and find your preferred store</div>
+            <div class="info_text">Discover nearby stores</div>
+            <div class="info_text">Follow your favorite stores</div>
+            <div class="info_text">Purchase meals directly from the App</div>
+        </div> -->
+
+
+
+        <!--  ======= Footer ======= -->
+        <footer>
+            <p class="copy_right">© 2018 Too Good To Go Ltd. All rights reserved</p>
+        </footer>
+
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <script src="js/camroll_slider.js"></script>
+        
+        <script>
+
+        $("#example").camRollSlider();
+
+        var scrollLast=0;
+        $(window).scroll(function(){
+            let scrollNow=$(this).scrollTop();
+
+            if(scrollNow>scrollLast){
+                $("header").addClass("hide_nav")
+            }else{
+                $("header").removeClass("hide_nav")
+            }
+            scrollLast=scrollNow;
+        });
+        
+        // $('.crs-bar-roll-item').eq(1).click(fnction(){
+        //     $("info_text").addClass("hide_nav")
+        // })
+        
+        
+        </script>
+    </body>
+</html>

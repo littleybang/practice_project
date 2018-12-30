@@ -1,0 +1,556 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>about</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico|Nunito:600,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+  crossorigin="anonymous"> -->
+        <style>
+            /* 
+            銀紅 #EF767A
+            藏青 #456990
+            松柏綠 #49BEAA
+            青碧 #49DCB1
+            杏黃 #EEB868
+            灰 #333
+             */
+            /* body{
+                height: 300vh;
+            } */
+
+            /* ========HEADER navbar========= */
+            h1.top_brand{
+                padding: 20px;
+                display: block;
+                text-align: center;
+                font-family: 'Pacifico', cursive;
+                color: rgb(80, 80, 80);
+            }
+            header{
+                display: flex;
+                justify-content: center;
+                transition: .5s;
+            }
+            nav{
+                background: #fff;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 99;
+                /* transition: .5s; */
+            }
+            .hide_nav{
+                transform: translateY(-100px);
+            }
+            ul{
+                max-width: 760px;
+                /* text-align: center; */
+                margin: auto;
+            }
+            li {
+                list-style-type: none;
+                
+            }
+            li a{
+                color: #456990;
+                font-size: 1rem;
+                /* font-family: Nunito; */
+            }
+            li a:hover {
+                text-decoration: none;
+                color: #49BEAA;
+                padding-bottom: 0px;
+                border-bottom: 2px solid #49BEAA;
+            }
+
+            /* ======= FACT ======= */
+            .fact_bg{
+                margin-top: 150px;
+                background: url(images/food_waste_bg.jpg);
+                background-size: cover;
+                height: 400px;
+                background-attachment: fixed;
+            }
+            .fact_wrapper{
+                height: 100%;
+                background-attachment: fixed;
+            }
+            .fact_bg h1{
+                font-weight: 700;
+                font-size: 4rem;
+                color: #ff5056;
+                margin-top: 10%;
+                margin-left: 40px;
+            }
+            .facts{
+                width: 200px;
+                height: 45%;
+                margin: 10px;
+                padding: 10px;
+                /* border: 1px solid #49BEAA; */
+                border-radius: 8px;
+                background: rgba(255, 255, 255, 0.6);
+                text-align: center;
+                color: #444;
+            }
+            .facts h3 {
+                /* padding: 10px; */
+                font-size: 3rem;
+                font-weight: 700;
+                /* text-align: center; */
+            }
+            .facts p{
+                font-size: 1.1rem;
+            }
+            @media screen and (min-width: 992px) and (max-width: 1200px){
+                .facts h3{
+                    font-size: 36px;
+                }
+                .facts p{
+                    font-size: 16px;
+                }
+                .facts{
+                    height: 50%;
+                }
+            }
+            @media screen and (max-width: 768px){
+                .facts h3{
+                    font-size: 30px;
+                    line-height: 30px;
+                    display: inline-block;
+                    margin-top: 0%;
+                    margin-left: 0px;
+                }
+                .facts p{
+                    font-size: 12px;
+                    line-height: 12px;
+                    /* display: inline-block; */
+                }
+                .facts{
+                    width: 90%;
+                    height: 20%;
+                }
+                .hidden_text{
+                    opacity: 0;
+                }
+                .fact_bg h1{
+                    font-size: 48px;
+                }
+            }
+            /* ======= about ======= */
+            .about_bg{
+                margin-top: 150px;
+                background: url(images/main_bg_egg_triangle.png) no-repeat center;
+                background-size: contain;
+            }
+            .about_wrapper{
+                height: 600px;
+                position: relative;
+            }
+            h1.about_title{
+                font-weight: 700;
+                font-size: 4rem;
+                color: #268EC6;
+            }
+            .about_p{
+                width: 30%;
+                text-align: justify;
+                position: absolute;
+                font-size: 1.1rem;
+            }
+            .about1{
+                top: 20%;
+                left: 5%; 
+
+            }
+            .about2{
+                top: 60%;
+                right: 10%;
+            }
+            @media screen and (max-width: 768px){
+                .about_bg{
+                    margin-top: 150px;
+                    background: url(images/main_bg_egg_triangle.png) no-repeat center;
+                    background-size: cover;
+                }
+                .about_p{
+                    width: 80%;
+                    line-height: 1.5rem;
+                }
+                .about2{
+                    top: 57%;
+                    left: 5%;
+                }
+            }
+
+
+            /* ======= solution ======= */
+            .solution_bg{
+                background: url(images/solution_bg_style.jpg) no-repeat right bottom;
+                background-size: cover;
+                height: 400px;
+                background-attachment: fixed;
+            }
+            .solution_wrapper h1{
+                font-weight: 700;
+                font-size: 2.5rem;
+                color: #ff5056;
+            }
+            .solution_data{
+                /* margin-top: 5%; */
+                margin: 5% 20px ;
+                width: 100px;
+                text-align: center;
+                background: rgba(0, 0, 0, 0.493);
+                border-radius: 10px;
+                padding: 10px;
+            }
+            .solution_data img{
+                width: 50px;
+            }
+            .counters{
+                color: #fff;
+            }
+            @media screen and (max-width: 768px){
+                .solution_wrapper{
+                    margin-left: 5%;
+                }
+                .solution_wrapper h1{
+                    font-size: 2.5rem;
+                }
+                .solution_data h2{
+                    font-size: 24px;
+                    /* color: red; */
+                }
+                .solution_data{
+                    width: 100px;
+                }
+            }
+
+            
+
+            /* =====social feed====== */
+            .masonry_wrapper{
+                margin: 100px auto;
+                max-width: 960px;
+            }
+            .ig_title{
+                text-align: center;
+                padding: 20px;
+            }
+            .ig_title img{
+                width: 60px;
+            }
+            .masonry{
+                column-count: 4;
+            }
+            @media screen and (max-width: 767px){
+                .masonry{
+                    column-count: 3;
+                }
+            }
+            .item{
+                border-radius: 4px;
+                overflow: hidden;
+                margin-bottom:10px;
+                background: #fff;
+                -webkit-column-break-inside: avoid; /* Chrome, Safari, Opera */
+                page-break-inside: avoid; /* Firefox */
+                break-inside: avoid; /* IE 10+ */
+                transition: .5s;
+                cursor: pointer;
+                position: relative;
+            }
+            .like, .share{
+                width: 30px;
+                position: absolute;
+                top: 40%;
+                margin: 10px;
+                opacity: 0;
+            }
+            .like{
+                left: 25%;
+            }
+            .share{
+                right: 25%;
+            }
+            .item:hover{
+                filter: brightness(60%);
+            }
+            .item:hover .like, .item:hover .share{
+                opacity: 1;
+            }
+            .masonry img{
+                max-width: 100%;
+            }
+            .ig_more{
+                display: inline-block;
+                border: 1px solid #268EC6;
+                border-radius: 20px;
+                margin-left: 50%;
+                margin-right: 50%;
+                transform: translate(-50%, 30px);
+            }
+            .ig_more a{
+                padding: 5px 15px;
+                display: block;
+                color: #268EC6;
+            }
+            .ig_more a:hover{
+                text-decoration: none;
+                color: #fff;
+                background: #268EC6;
+                border-radius: 20px;
+            }
+
+            /* ======= FOOTER ======= */
+            footer{
+                width: 100%;
+                height: 150px;
+                background: #49BEAA;
+            }
+            footer .copy_right{
+                text-align: center;
+                padding-top: 70px;
+                color: white;
+                font-size: 0.9rem;
+                font-weight: 100;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <div class="">
+                        <h1 class="top_brand">Too good to go</h1>
+                    </div>
+
+                    <ul class="nav d-flex justify-content-around">
+                        <li class="nav-item"><a href="main.html"" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <!-- <li class="nav-item"><a href="" class="nav-link">Save food</a></li> -->
+                        <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
+                        <li class="nav-item"><a href="app.html" class="nav-link">App</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+        <div class="fact_bg d-flex">
+            <h1>Food Waste Facts</h1>
+            <div class="fact_wrapper container d-flex justify-content-center align-items-center row">
+                <div class="facts col-md-4 col-lg-2">
+                    <h3>33%</h3>
+                    <p>of all produced food end up in bin</p>
+                </div>
+                <div class="facts col-md-4 col-lg-2">
+                    <h3>1.3</h3>
+                    <h4>billion tons</h4>
+                    <p class="hidden_text">of food are wasted</p>
+                </div>
+                <div class="facts col-md-4 col-lg-2">
+                    <h3>$940</h3>
+                    <h4>billion dollars</h4>
+                    <p class="hidden_text"> loss per year</p>
+                    <!-- in economic globally -->
+                </div>
+                <div class="facts col-md-4 col-lg-2">
+                    <h3>3rd</h3>
+                    <p>largest emitter of CO2, if food waste were a country</p>
+                </div>
+            </div>
+        </div>
+        <main class="about_bg container">
+            <div class="about_wrapper ">
+                <h1 class="about_title">Our Story</h1>
+                <p class="about_p about1">Too Good To Go is one of Europe's most promising start-ups. 
+                    We’ve made a massive impact in reducing food waste and our story has been well covered by international, 
+                    national and local medias. We’re currently active in 8 European countries with more on the way!
+                </p> 
+                <p class="about_p about2">In less than 2 years we've partnered with over 5,000 stores to fight food waste, 
+                    3 million people have downloaded the app, 
+                    and over 2.5 million meals have been rescued.
+                </p> 
+                
+            </div>
+        </main>
+        <main class="solution_bg">
+            <div class="solution_wrapper container d-flex justify-content-center align-items-center row">
+                <div class="solution_data col">
+                    <img src="images/svg/shop_white.svg" alt="">
+                    <h2 class="counters number">5000</h2>
+                    <h2 class="counters">stores</h2>
+                </div> 
+                
+                <div class="solution_data col">
+                    <img src="images/svg/profile_white.svg" alt="">
+                    <h2 class="counters number1">3000000</h2>
+                    <h2 class="counters">people</h2>
+                </div>
+                
+                <div class="solution_data col">
+                    <img src="images/svg/dinner_white.svg" alt="">
+                    <h2 class="counters number2">2500000</h2>
+                    <h2 class="counters">meals</h2>
+                </div>
+                <h1 class="solution_title">Here's our efforts</h1>
+            </div>
+        </main>
+
+        <!-- ====== social feed ====== -->
+        <section class="masonry_wrapper">
+            <h2 class="ig_title">
+                <img src="images/ig/instagram.svg" alt="">
+                Instagram <br>#toogoodtogo 
+            </h2>
+            
+            <div class="masonry">
+                <div class="item">
+                    <img src="images/ig/ig_tgtg1.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/ig/ig_tgtg2.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/ig/ig_tgtg8.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/ig/ig_tgtg13.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/ig/ig_tgtg4.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/ig/ig_tgtg7.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/ig/ig_tgtg3.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/ig/ig_tgtg12.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/ig/ig_tgtg10.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/ig/ig_tgtg16.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+                <div class="item">
+                    <img src="images/ig/ig_tgtg14.jpg" alt="">
+                    <img class="like" src="images/ig/heart.svg" alt="">
+                    <img class="share" src="images/ig/share.svg" alt="">
+                </div>
+            </div>
+            <div class="ig_more"><a href="">More</a></div>
+        </section>
+            
+        <footer>
+            <p class="copy_right">© 2018 Too Good To Go Ltd. All rights reserved</p>
+        </footer>
+
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        <script src="js/jquery.easy_number_animate.min.js"></script>
+
+        
+        <script>
+             // ===== hide nav ===== 
+             var scrollLast=0;
+            $(window).scroll(function(){
+                let scrollNow=$(this).scrollTop();
+
+                if(scrollNow>scrollLast){
+                    $("header").addClass("hide_nav")
+                }else{
+                    $("header").removeClass("hide_nav")
+                }
+
+                scrollLast=scrollNow;
+            });
+
+
+            // ===== number counter =====
+            $(window).scroll(function(){
+                var wScroll = $(this).scrollTop();
+
+                if(wScroll > $(".solution_bg").offset().top -450){
+
+                    $('.number').easy_number_animate({
+                        start_value: 0,
+                        end_value: 5000,
+                        duration: 1000,
+                        delimiter: ',',
+                    });
+                    $('.number1').easy_number_animate({
+                        start_value: 0,
+                        end_value: 3000000,
+                        duration: 1000,
+                        delimiter: ',',
+                    });
+                    $('.number2').easy_number_animate({
+                        start_value: 0,
+                        end_value: 2500000,
+                        duration: 1000,
+                        delimiter: ',',
+                    });
+                }
+            });
+
+            // animation
+            $('.facts').addClass('animated fadeInLeft');
+
+            $(window).scroll(function(){
+                var wScroll = $(this).scrollTop();
+
+                if(wScroll > $(".about_wrapper").offset().top -700){
+                    $('.about_title').addClass('animated fadeInLeft');
+                }
+                if(wScroll > $(".about_p").offset().top -700){
+                    $('.about_p').addClass('animated fadeInLeft');
+                }
+            });
+
+            $(window).scroll(function(){
+                var wScroll = $(this).scrollTop();
+
+                if(wScroll > $(".about_wrapper").offset().top -700){
+                    $('.about_title').addClass('animated fadeInLeft');
+                }
+                if(wScroll > $(".about_p").offset().top -700){
+                    $('.about_p').addClass('animated fadeInLeft');
+                }
+            });
+
+        </script>
+    </body>
+</html>

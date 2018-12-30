@@ -1,0 +1,365 @@
+<!doctype html>
+<html lang="en">
+    <head>
+        <title>business</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+        <link href="https://fonts.googleapis.com/css?family=Lobster|Pacifico|Nunito:600,900" rel="stylesheet">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css">
+        <!-- <link rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"
+  integrity="sha384-OHBBOqpYHNsIqQy8hL1U+8OXf9hH6QRxi0+EODezv82DfnZoV7qoHAZDwMwEJvSw"
+  crossorigin="anonymous"> -->
+        <style>
+            /* 
+            銀紅 #EF767A
+            藏青 #456990
+            松柏綠 #49BEAA
+            青碧 #49DCB1
+            杏黃 #EEB868
+            灰 #333
+             */
+            body{
+                height: 100vh;
+            }
+
+            /* ========HEADER navbar========= */
+            h1.top_brand{
+                padding: 20px;
+                display: block;
+                text-align: center;
+                font-family: 'Pacifico', cursive;
+                color: #505050;
+            }
+            header{
+                display: flex;
+                justify-content: center;
+                transition: .5s;
+            }
+            nav{
+                background: #fff;
+                position: fixed;
+                top: 0;
+                width: 100%;
+                z-index: 99;
+            }
+            .hide_nav{
+                transform: translateY(-100px);
+            }
+            ul{
+                max-width: 760px;
+                /* text-align: center; */
+                margin: auto;
+            }
+            li {
+                list-style-type: none;
+                
+            }
+            li a{
+                color: #456990;
+                font-size: 1rem;
+                /* font-family: Nunito; */
+            }
+            li a:hover {
+                text-decoration: none;
+                color: #49BEAA;
+                padding-bottom: 0px;
+                border-bottom: 2px solid #49BEAA;
+            }
+            
+            .business_bg{
+                margin-top: 160px;
+                width: 100%;
+                height: 300px;
+                background: url(images/business_bg.jpg) 0 70% no-repeat;
+                background-size: cover;
+            }
+            .business_bg h2{
+                font-size: 4rem;
+                color: rgb(255, 59, 92);
+                margin: 20px 30px;
+                font-weight: 600;
+                
+            }
+            /* ======= why TGTO? ======= */
+            .main_pros{
+                margin-top: 50px;
+                color: #505050;
+            }
+            .main_pros h2{
+                text-align: center;
+                line-height: 4rem;
+            }
+            .main_pros img{
+                width: 100px;
+                height: 100px;
+                
+            }
+            .pro_card{
+                padding-top: 30px;
+                max-width: 270px;
+                margin: 15px;
+                text-align: center;
+            }
+            .pro_card h4{
+                margin: 10px 0 0 0; 
+            }
+            .pro_card p{
+                margin: 5px 0; 
+            }
+            .is-showing{
+                opacity: 1;
+                transform: translateX(0px)
+            }
+            /* @media screen and (max-width: 695px){
+                .pros_wrapper{
+                display: block;
+                }
+            } */
+
+            /* ======pro checks====== */
+            .pro_check_bg{
+                background: #eee;
+                width: 100%;
+                margin-top: 30px;
+            }
+            .pro_check_wrapper{
+                margin: 0 20%;
+                max-width: 760px;
+                display: flex;
+                color: #505050;
+            }
+            .pro_check_box{
+                /* display: inline-block; */
+                margin: 30px 30px;
+            }
+            @media screen and (max-width: 992px){
+                .pro_check_wrapper{
+                    margin: 0 10%;
+                    padding: 20px;
+                }
+                .pro_check_box{
+                margin: 0;
+                }
+            }
+            .pro_check_box li{
+                line-height: 2.5rem;
+                font-size: 1.1rem;
+            }
+            .pro_check_box img{
+                width: 20px;
+                /* vertical-align: middle; */
+                margin-right: 10px; 
+            }
+            /* ======= form ======= */
+            .form_wrapper{
+                background: url(images/food_bg_ss.png) no-repeat fixed center;
+                background-size: contain;
+            }
+            /* .head_pic{
+                
+            } */
+            .head_pic img{
+                /* margin-top: ; */
+                width: 300px;
+                display: block;
+                margin: 80px auto 0 auto;
+            }
+            form {
+                max-width: 500px;
+                margin: auto;
+                position: relative;
+                border: 1px solid #aaa;
+                padding: 20px;
+                background: #ffffff;
+                color: #505050;
+            }
+            form .form_title{
+                text-align: center;
+                font-weight: 700;
+                color: #505050;
+            }
+            form span{
+                display: inline-block;
+                position: absolute;
+                background: #49BEAA ;
+                width: 100px;
+                height: 10px;
+                left: 207px;
+                top: 43px;
+                opacity: .6;
+                /* z-index: -1; */
+            }
+            .signUp{
+                /* margin-left: 20px; */
+                width: 200px;
+                /* height: 100px; */
+                border: 2px solid #49BEAA;
+                border-radius: 5px;
+                padding: 5px;
+                text-align: center;
+                /* background: #49BEAA; */
+                margin: 0 auto;
+            }
+            .signUp a{
+                color: #49BEAA;
+                padding: 9px 52px;
+            }
+            .signUp:hover{
+                background: #49BEAA; 
+            }
+            .signUp a:hover{
+                text-decoration: none;
+                /* background: #49BEAA; */
+                color: white;
+            }
+            
+
+            /* ======= FOOTER ======= */
+            footer{
+                width: 100%;
+                height: 150px;
+                background: #49BEAA;
+            }
+            footer .copy_right{
+                text-align: center;
+                padding-top: 70px;
+                color: white;
+                font-size: 0.9rem;
+                font-weight: 100;
+            }
+
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <header>
+                <nav>
+                    <div class="">
+                        <h1 class="top_brand">Too good to go</h1>
+                    </div>
+                    <ul class="nav d-flex justify-content-around">
+                        <li class="nav-item"><a href="main.html" class="nav-link">Home</a></li>
+                        <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+                        <!-- <li class="nav-item"><a href="" class="nav-link">Save food</a></li> -->
+                        <li class="nav-item"><a href="business.html" class="nav-link">Business</a></li>
+                        <li class="nav-item"><a href="app.html" class="nav-link">App</a></li>
+                    </ul>
+                </nav>
+            </header>
+        </div>
+       <!-- ===== business header ===== -->
+        <div class="business_bg d-flex align-items-end">
+            <h2>Become <br> Partners</h2>
+        </div>
+
+         <!-- ======= why TGTO? =======  -->
+        <main class="main_pros container">
+            <h2>Why's it for me?</h2>
+            <div class="container pros_wrapper d-flex justify-content-around row">
+                <div class="pro_card col-lg-4">
+                    <img src="images/svg/pro_money.svg" alt="">
+                    <h4>More Money</h4>
+                    <p>Find the food you fancy and order your meal through the app.</p>
+                </div>
+                <div class="pro_card col-lg-4">
+                    <img src="images/svg/pro2.svg" alt="">
+                    <h4>Less Waste</h4>
+                    <p>Collect the food at the assigned period instore.</p>
+                </div>
+                <div class="pro_card col-lg-4">
+                    <img src="images/svg/pro3.svg" alt="">
+                    <h4>New Customers</h4>
+                    <p>Rescue food that would have been wasted.</p>
+                </div>
+            </div>
+        </main>
+        <main class="pro_check_bg">
+            <div class="pro_check_wrapper container row d-flex justify-content-center ">
+                <ul class="pro_check_box check1 col-lg-5">
+                    <li><img src="images/svg/checked.svg" alt=""> Minimal admin and training</li>
+                    <li><img src="images/svg/checked.svg" alt=""> Fight food waste</li>
+                    <li><img src="images/svg/checked.svg" alt=""> Increase revenue</li>
+                </ul>
+
+                <ul class="pro_check_box check2 col-lg-5">
+                    <li><img src="images/svg/checked.svg" alt=""> Support from us</li>
+                    <li><img src="images/svg/checked.svg" alt=""> Free marketing</li>
+                    <li><img src="images/svg/checked.svg" alt=""> Improve brand image</li>
+                </ul>
+            </div>
+
+        </main>
+
+    
+        <!-- ======= form ======= -->
+        <main class="form_bg">
+            <div class="form_wrapper">
+                <div class="head_pic">
+                    <img src="images/plate_begal490x700.png" alt="">
+                </div>
+                <form class="my-3">
+                    <span class="form_title"></span>
+                    <h3 class="form_title">Join Us</h3>
+                    
+                    <div class="form-group">
+                        <label for="formGroupExampleInput">Name of Business</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput" placeholder="company name">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Contact Person</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="name of you contact window">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Phone Number</label>
+                        <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="+886-12345678">
+                    </div>
+                    <div class="form-group">
+                        <label for="formGroupExampleInput2">Email Address</label>
+                        <input type="email" class="form-control" id="formGroupExampleInput2" placeholder="123@tgto.com">
+                    </div>
+                    <div class="signUp"><a href="">Sign me up</a></div>
+                </form>
+            </div>
+        </main>
+            
+        <footer>
+            <p class="copy_right">© 2018 Too Good To Go Ltd. All rights reserved</p>
+        </footer>
+
+        <script
+        src="https://code.jquery.com/jquery-3.3.1.min.js"
+        integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+        crossorigin="anonymous"></script>
+        
+        <script>
+        var scrollLast=0;
+        $(window).scroll(function(){
+            let scrollNow=$(this).scrollTop();
+
+            if(scrollNow>scrollLast){
+                $("header").addClass("hide_nav")
+            }else{
+                $("header").removeClass("hide_nav")
+            }
+
+            scrollLast=scrollNow;
+        });
+
+        $('.pro_card').addClass('animated fadeInLeft');
+
+        $(window).scroll(function(){
+            var wScroll = $(this).scrollTop();
+            if(wScroll > $(".head_pic").offset().top -600){
+                $('.head_pic').addClass('animated bounceInUp');
+            }
+            // if(wScroll > $(".about_p").offset().top -700){
+            //     $('.about_p').addClass('animated fadeInLeft');
+            // }
+        });
+        
+        </script>
+    </body>
+</html>

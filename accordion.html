@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>accordion effext</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.2/css/bootstrap.min.css" integrity="sha384-Smlep5jCw/wG7hdkwQ/Z5nLIefveQRIY9nfy6xoR1uRYBtpZgI6339F5dgvm/e9B" crossorigin="anonymous">
+    <style>
+        .accordion{
+            height: 400px;
+            border: 1px solid rgb(34, 82, 138);
+            border-radius: 5px;
+        }
+        .accordion a{
+            border: 1px solid rgb(40, 136, 192);
+            writing-mode: vertical-lr;
+            text-orientation: upright;
+            background: #52b1ff;
+            color: rgb(4, 91, 163) !important;
+            cursor: pointer;
+            border-radius: 5px 0 0 5px;
+            font-weight: 600;
+
+        }
+        .accordion a:hover{
+            background: #036eb6;
+            color: white !important; 
+        }
+        .content{
+            overflow: hidden;
+            /* 111如果只設width的話就不會有漸變效果，所以設max-width */
+            /* with: 0 */
+            max-width: 0;
+            /* 加了transition會鈍鈍的不知道為何?? */
+            transition: .5s;
+        }
+        .content.active{
+            /* 111 width:0和width:auto無法有漸變 */
+            /* width: auto */
+            max-width: 100%;
+        }
+    </style>
+  </head>
+  <body>
+      <div class="container">
+        <div class="accordion d-flex">
+            <a class="p-2 topic">HTML</a>
+            <div class="content">
+                <p class="p-2">
+                    Hypertext Markup Language (HTML) is the standard markup language for creating web pages and web applications. With Cascading Style Sheets (CSS) and JavaScript, it forms a triad of cornerstone technologies for the World Wide Web.
+                </p>
+            </div>
+            <a class="p-2 topic">CSS</a>
+            <div class="content">
+                <p class="p-2">
+                    Cascading Style Sheets (CSS) is a style sheet language used for describing the presentation of a document written in a markup language like HTML. CSS is a cornerstone technology of the World Wide Web, alongside HTML and JavaScript.
+                </p>
+            </div>
+            <a class="p-2 topic">JQuery</a>
+            <div class="content">
+                <p class="p-2">
+                    jQuery is a cross-platform JavaScript library designed to simplify the client-side scripting of HTML. It is free, open-source software using the permissive MIT License. Web analysis indicates that it is the most widely deployed JavaScript library by a large margin.
+                </p>
+            </div>
+            <a class="p-2 topic">PHP</a>
+            <div class="content">
+                <p class="p-2">
+                    PHP: Hypertext Preprocessor (or simply PHP) is a server-side scripting language designed for Web development, but also used as a general-purpose programming language. It was originally created by Rasmus Lerdorf in 1994, the PHP reference implementation is now produced by The PHP Group. PHP originally stood for Personal Home Page, but it now stands for the recursive acronym PHP: Hypertext Preprocessor.
+                </p>
+            </div>
+        </div>
+
+      </div>
+      
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+        $(".topic").click(function(){
+            $(this).next().addClass("active").siblings().removeClass("active");
+
+            $(".accordion a, .content").removeClass("active");
+            $(this).removeClass("active").next().addClass("active");
+
+        })
+        
+    
+    </script>
+  </body>
+</html>
